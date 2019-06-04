@@ -13,6 +13,8 @@ const home = () => {
 	main.appendChild(h1)
 	main.appendChild(p);
 
+	main.id = "tab";
+	
 	return main;
 }
 

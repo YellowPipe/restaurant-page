@@ -12,4 +12,24 @@ function component() {
     return element;
   }
 
+  const changeTab = (content) => {
+		let tab = document.getElementById("tab");
+		while (tab.firstChild) {
+		    tab.removeChild(tab.firstChild);
+		}
+		const newElement = document.createElement('div');
+		newElement.innerHTML = content;
+		tab.appendChild(newElement);
+  }
+
+  function add_events() {
+  	let links = document.getElementsByClassName("nav-link");
+  	for (let i=0; i<links.length; i++) {
+  		let linkPath = links[i].id
+  		links[i].addEventListener("click", () => { changeTab(linkPath) } );
+  	}
+
+  }
+
   document.body.appendChild(component());
+  add_events();
