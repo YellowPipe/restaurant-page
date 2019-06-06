@@ -22,7 +22,7 @@ const header = () => {
   	div.appendChild(brand);
   	div.appendChild(nav);
   	parent.appendChild(div);
-    
+    parent.id = "header"
   	return parent;
   }
 

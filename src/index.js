@@ -1,35 +1,44 @@
 import './scss/index.scss';
 import header from './header';
-import home from './tabs';
+import home from './home';
+import menu from './menu';
+import contacts from './contacts';
 import footer from './footer';
 
-function component() {
-	const element = document.createElement('div');
-	element.classList.add("cover-container", "d-flex", "w-100", "h-100", "p-3", "mx-auto", "flex-column");
-    element.appendChild(header());
-    element.appendChild(home());
-    element.appendChild(footer());
-    return element;
-  }
+const changeTab = (content) => {
+	let tab = document.getElementById("tab");
+	tab.remove()
+	let header = document.getElementById("header");
+	let newElement = null;
+	switch (content) {
+		case "contacts": 
+			newElement = contacts(); 
+			break;
+		case "home":
+			newElement = home();
+			break;
+		case "menu": 
+			newElement = menu();
+			break;
+	}
+	header.insertAdjacentElement("afterEnd", newElement);
+	}
 
-  const changeTab = (content) => {
-		let tab = document.getElementById("tab");
-		while (tab.firstChild) {
-		    tab.removeChild(tab.firstChild);
-		}
-		const newElement = document.createElement('div');
-		newElement.innerHTML = content;
-		tab.appendChild(newElement);
-  }
-
-  function add_events() {
+  function addEvents() {
   	let links = document.getElementsByClassName("nav-link");
   	for (let i=0; i<links.length; i++) {
   		let linkPath = links[i].id
   		links[i].addEventListener("click", () => { changeTab(linkPath) } );
   	}
-
   }
 
-  document.body.appendChild(component());
-  add_events();
+  function addContent() {
+	const element = document.getElementById("content");
+    element.appendChild(header());
+    element.appendChild(home());
+    element.appendChild(footer());
+  	addEvents();
+  }
+
+  addContent();
+ 	

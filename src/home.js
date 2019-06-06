@@ -10,7 +10,7 @@ const home = () => {
 	p.innerHTML = "best best best best best best best best best best best best best best best"
 	h1.innerHTML = "Best restaurant in the city"
 
-	main.appendChild(h1)
+	main.appendChild(h1);
 	main.appendChild(p);
 
 	main.id = "tab";
