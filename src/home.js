@@ -7,8 +7,8 @@ const home = () => {
 	h1.classList.add("cover-heading");
 	p.classList.add("lead")
 
-	p.innerHTML = "best best best best best best best best best best best best best best best"
-	h1.innerHTML = "Best restaurant in the city"
+	p.textContent = "We serve only the highest quality product, prepare it in a clean and sparkling environment, and serve it in a warm and friendly manner."
+	h1.textContent = "Best restaurant in the city"
 
 	main.appendChild(h1);
 	main.appendChild(p);

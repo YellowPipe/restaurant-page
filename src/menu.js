@@ -7,11 +7,12 @@ const menu = () => {
 	let column1 = document.createElement('th');
 	let column2 = document.createElement('th');
 	main.classList.add("inner", "cover");
+	table.classList.add("table");
 	h1.classList.add("cover-heading");
 	table.classList.add("border",  "border-white", "py-5")
 
 	const menu = {
-		dish: 123,
+		pasta: 123,
 		soup: 33,
 		salad: 11,
 		fish: 32,
@@ -22,9 +23,9 @@ const menu = () => {
 
 
 
-	h1.innerHTML = "Menu"
-	column1.innerHTML = "Dish"
-	column2.innerHTML = "Price"
+	h1.textContent = "Menu"
+	column1.textContent = "Dish"
+	column2.textContent = "Price"
 
 
 	
@@ -36,8 +37,8 @@ const menu = () => {
 	  let row = document.createElement('tr');
 	  let column1 = document.createElement('td');
 	  let column2 = document.createElement('td');
-	  column1.innerHTML = dish;
-	  column2.innerHTML = price;
+	  column1.textContent = dish;
+	  column2.textContent = price;
 	  row.appendChild(column1);
 	  row.appendChild(column2);
 	  table.appendChild(row);

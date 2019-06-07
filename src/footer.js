@@ -6,7 +6,7 @@ const footer = () => {
 	footer.classList.add("mastfoot", "mt-auto");
 	div.classList.add("inner");
 
-	p.innerHTML = "best best best best best best best best best best best best best best best";
+	p.textContent = "Town, Street 23; 555-55-55; restaurant@email.com";
 
 	div.appendChild(p);
 	footer.appendChild(div);
